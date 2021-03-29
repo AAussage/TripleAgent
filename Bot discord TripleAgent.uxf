@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>40</y>
+      <w>320</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-name: str
+-ID: int
+-role: str
+-agency: str
+-appear_as: str
+-in_virus_list: Bool
+-agency: str
+-win_condition: str
+-grudge:int
+-love:int
+--
+export_attributes(list_of_keys_required)
+update_attributes(dict_of_attributes_to_update)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
