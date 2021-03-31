@@ -2,7 +2,8 @@
 import time
 
 class Evenement:
-	pass
+	def __init__(player_id):
+		self.player_id = player_id
 
 
 class Timer:
