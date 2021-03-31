@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import random
+from player import *
 
 DISCORD_CONNECTION = False
 NUMBER_OF_VIRUS = 2
@@ -7,8 +8,8 @@ NUMBER_OF_VIRUS = 2
 class Game:
     def __init__(self):
         self.list_of_players=[] #Contient les noms Discord des joueurs
-        self.list_of_virus_roles=["virus","virus2"] #Hardcode, roles qui sont du Virus 
-        self.list_of_service_roles=["service","service2","service3"] #Hardcode, roles qui sont du Service
+        self.list_of_virus_roles=["virus"] #Hardcode, roles qui sont du Virus 
+        self.list_of_service_roles=["service"] #Hardcode, roles qui sont du Service
         self.roles_dict={} #Reference le role attribue a chaque joueur
         self.players_dict={} #Contient les objets joueurs et leur numero (cle) permettant de les identifier
 
@@ -43,6 +44,16 @@ class Game:
         print(keys)
         self.roles_dict = dict(zip(keys,values)) #attribution des roles aux joueurs
 
+    def players_generation(self):
+        for k in range(0,len(self.list_of_players)):
+            name = self.list_of_players[k]
+            ID = k
+            role = self.roles_dict[k] 
+
+            new_player = Player(name,ID,role)
+
+            self.players_dict[k]=new_player
+
 
 
 if __name__ == "__main__":
@@ -51,6 +62,10 @@ if __name__ == "__main__":
     mah_game.get_players()
     mah_game.role_attribution()
     print(mah_game.roles_dict)
-    print(mah_game.roles_dict[2])
+
+    mah_game.players_generation()
+    #for key in mah_game.players_dict:
+    #    print(mah_game.players_dict[key].spec_dict)
+    #    print(mah_game.players_dict[key].name)
 
 
